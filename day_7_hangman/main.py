@@ -132,3 +132,4 @@ if "_" not in blanks:
     print(f"🎉 Congratulations! You guessed the word: {random_generated_word} 🎉")
 else:
     print(f"💀 Game Over! The word was: {random_generated_word} 💀")
+
