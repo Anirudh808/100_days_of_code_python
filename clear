@@ -1,0 +1,52 @@
+[33mcommit 304274ea6f9ccc317da1051a0062f45886fb7c8f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Anirudh <anirudhmounasamy@gmail.com>
+Date:   Fri May 9 14:32:23 2025 +0530
+
+    updated security best practice
+
+[1mdiff --git a/day_35_twilio_messaging/main.py b/day_35_twilio_messaging/main.py[m
+[1mindex c51d494..154b3e4 100644[m
+[1m--- a/day_35_twilio_messaging/main.py[m
+[1m+++ b/day_35_twilio_messaging/main.py[m
+[36m@@ -1,7 +1,13 @@[m
+[32m+[m[32mimport os[m
+[32m+[m
+ from twilio.rest import Client[m
+[32m+[m[32mfrom dotenv import load_dotenv[m
+[32m+[m
+[32m+[m[32m# Load environment variables from .env file[m
+[32m+[m[32mload_dotenv()[m
+ [m
+[31m-account_sid = "ACb9014db48feb739cbb90b63cac4d1fec"[m
+[31m-auth_token = "1c20f498b2dd6a98532c74208b076add"[m
+[32m+[m[32maccount_sid = os.getenv("SID")[m
+[32m+[m[32mauth_token = os.getenv("TOKEN")[m
+ client = Client(account_sid, auth_token)[m
+ [m
+ message = client.messages.create([m
+
+[33mcommit 8c1bb3caacffabfceb2ec120df0cb0142194d28f[m
+Author: Anirudh <anirudhmounasamy@gmail.com>
+Date:   Fri May 9 14:24:19 2025 +0530
+
+    completed till day 51
+
+[1mdiff --git a/day_35_twilio_messaging/main.py b/day_35_twilio_messaging/main.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c51d494[m
+[1m--- /dev/null[m
+[1m+++ b/day_35_twilio_messaging/main.py[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mfrom twilio.rest import Client[m
+[32m+[m
+[32m+[m[32maccount_sid = "ACb9014db48feb739cbb90b63cac4d1fec"[m
+[32m+[m[32mauth_token = "1c20f498b2dd6a98532c74208b076add"[m
+[32m+[m[32mclient = Client(account_sid, auth_token)[m
+[32m+[m
+[32m+[m[32mmessage = client.messages.create([m
+[32m+[m[32m    body="This is the ship that made the Kessel Run in fourteen parsecs?",[m
+[32m+[m[32m    from_="+17543108129",[m
+[32m+[m[32m    to="+919345453725",[m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32mprint(message.body)[m
